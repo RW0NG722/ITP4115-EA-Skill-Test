@@ -4,3 +4,17 @@
 
 
 itp4115-ay2425-skill-test-set-b-v2 forked from it114115/it114115-classroom-2425-itp4115_ay2425_skill_test_set_b_v2-ITP4115_AY2425_Skill_Test_set_B
+
+#From moodle
+1. Login A536 with .\user account without password.
+2. Open Chrome browser in A536 PC and updates your Chrome. 
+3. (Optional) Install the latest Visual Studio Code and GitHub Codespaces extension.
+4. Login Al Assistant and Screen Sharing
+ https://thankful-moss-0a2536000.5.azurestaticapps.net/ 
+5. Login your GitHub.
+ https://github.com/ 
+6. Share your screen in All Screen. 
+7. (XX) GitHub Classroom Link:
+ https://classroom.github.com/a/XXXXXXXX
+8. Join the GitHub Classroom and run CodeSpace in browser or desktop VS code. 
+9. Don't open another tab except for CodeSpace, moodle2425 and Al Assistant Screen Sharing
