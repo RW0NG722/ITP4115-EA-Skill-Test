@@ -1,0 +1,53 @@
+{% extends "base.html.j2" %}
+
+{% block app_content %}
+    <div class="container mt-4">
+        <h1 class="text-center text-primary">{{ _("Weather Dashboard") }}</h1>
+
+        {% if current_user.is_authenticated %}
+            <p class="text-center text-success">{{ _('Welcome back, %(username)s!', username=current_user.username) }}</p>
+        {% else %}
+            <p class="text-center text-warning">{{ _("Please log in to access weather updates.") }}</p>
+        {% endif %}
+
+        {% if weather %}
+            <div class="card bg-light shadow-lg mt-3">
+                <div class="card-body">
+                    <h3 class="card-title text-center text-primary">
+                        <i class="bi bi-cloud-sun"></i> {{ _("Hong Kong Weather Forecast") }}
+                    </h3>
+                    <p class="card-text">
+                        <strong class="text-dark">{{ _("General Situation:") }}</strong>
+                        <span class="text-muted">{{ weather.generalSituation }}</span><br>
+
+                        {% if weather.tcInfo %}
+                            <strong class="text-danger">{{ _("Tropical Cyclone Info:") }}</strong>
+                            <span class="text-muted">{{ weather.tcInfo }}</span><br>
+                        {% endif %}
+
+                        {% if weather.fireDangerWarning %}
+                            <strong class="text-warning">{{ _("Fire Danger Warning:") }}</strong>
+                            <span class="text-muted">{{ weather.fireDangerWarning }}</span><br>
+                        {% endif %}
+
+                        <strong class="text-primary">{{ _("Forecast Period:") }}</strong>
+                        <span class="text-muted">{{ weather.forecastPeriod }}</span><br>
+
+                        <strong class="text-success">{{ _("Weather Description:") }}</strong>
+                        <span class="text-muted">{{ weather.forecastDesc }}</span><br>
+
+                        <strong class="text-info">{{ _("Outlook:") }}</strong>
+                        <span class="text-muted">{{ weather.outlook }}</span><br>
+
+                        <strong class="text-secondary">{{ _("Last Update:") }}</strong>
+                        <span class="text-muted">{{ weather.updateTime }}</span><br>
+                    </p>
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-danger text-center mt-3">
+                <strong>{{ _("Weather data is unavailable.") }}</strong>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
